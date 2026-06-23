@@ -1,0 +1,26 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "shell",
+			"label": "tsc: build - typescript.practice.ts",
+			"command": "tsc",
+			"args": [
+				"typescript.practice.ts"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}/typescript-practice"
+			},
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"problemMatcher": [
+				"$tsc"
+			],
+			"presentation": {
+				"reveal": "silent"
+			}
+		}
+	]
+}
