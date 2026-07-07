@@ -1,12 +1,14 @@
 import { test, expect, Page } from '@playwright/test';
 
-export class CheckoutPage {
+export class storePage {
 
   constructor(private page: Page) {}
 
-  async addAllProductsToCart() {
-    // Navigate to the store homepage
+  async goto() {
     await this.page.goto('https://demos.bellatrix.solutions/');
+  }
+
+  async addAllProductsToCart() {
 
     // Wait for products to load
     const products = this.page.locator('text=Add to cart').locator('..'); // Get the parent element of the "Add to cart" button, which is the product card

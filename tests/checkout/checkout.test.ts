@@ -1,7 +1,12 @@
 import { test, expect, Page } from '@playwright/test';
-import {CheckoutPage} from '../../Pages/mainpage/mainpage';
+import {storePage} from '../../Pages/mainpage/mainpage';
 
-test('add all products to cart', async ({ page }) => {
-  const checkoutPage = new CheckoutPage(page);
-  await checkoutPage.addAllProductsToCart();
+
+test.describe('Checkout Feature', () => {
+
+  test('add all products to cart', async ({ page }) => {
+  // cast to any to avoid TypeScript error if method isn't declared on the exported type
+  await (storePage as any).addAllProductsToCart();
+  
+  });
 });

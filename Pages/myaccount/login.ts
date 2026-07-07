@@ -9,8 +9,7 @@ export class login {
   async performLogin(email: string, password: string) {
 
     const headerPage = new HeaderPage(this.page);
-
-    await this.page.goto('https://demos.bellatrix.solutions/');
+    
     await headerPage.clickMyaccount();
     await expect(this.page).toHaveURL(/.*my-account/);
     await this.page.fill('#username', email);
