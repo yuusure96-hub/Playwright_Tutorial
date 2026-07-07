@@ -8,10 +8,11 @@ test.describe('Login Feature', () => {
   
   test('login with valid credentials', async ({ page }) => {
     const loginPage = new login(page);
-    
-    await storePage.goto(); // Navigate to the store page before performing login
-    await loginPage.performLogin(users.validUser.email, users.validUser.password);
+    const store = new storePage(page);
     const welcomeMsg = new welcomeMessage(page);
+
+    await store.goto(); // Navigate to the store page before performing login
+    await loginPage.performLogin(users.validUser.email, users.validUser.password);
     await welcomeMsg.validateWelcomeMessage();
     await welcomeMsg.performLogout();
   });
